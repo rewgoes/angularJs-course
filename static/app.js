@@ -25,7 +25,7 @@
     };
   });
 
-  app.controller("ReviewController", function(){
+  app.controller("ReviewController", function($scope){
 
     this.review = {};
 
@@ -33,6 +33,7 @@
       this.review.createdOn = Date.now();
       product.reviews.push(this.review);
       this.review = {};
+      $scope.reviewForm.$setPristine();
     };
   });
 
